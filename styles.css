@@ -283,6 +283,12 @@ body{
   }
 }
 
+iframe[src*="subscribe-forms.beehiiv.com"]{
+  display:block;
+  margin:0 auto;
+  max-width:100%;
+}
+
 /* Trust bullets under founder */
 .trust-bullets{
   margin:18px 0 0; padding:0 0 0 18px; color:#cfd5d9;
@@ -340,6 +346,12 @@ body{
     grid-template-columns:1fr 1fr;
     gap:12px;
   }
+}
+
+iframe[src*="subscribe-forms.beehiiv.com"]{
+  display:block;
+  margin:0 auto;
+  max-width:100%;
 }
 
 /* Trust bullets under founder */
