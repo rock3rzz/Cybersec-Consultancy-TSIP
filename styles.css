@@ -285,8 +285,9 @@ body{
 
 iframe[src*="subscribe-forms.beehiiv.com"]{
   display:block;
+  width:100%;
+  max-width:460px;
   margin:0 auto;
-  max-width:100%;
 }
 
 /* Trust bullets under founder */
@@ -350,8 +351,9 @@ iframe[src*="subscribe-forms.beehiiv.com"]{
 
 iframe[src*="subscribe-forms.beehiiv.com"]{
   display:block;
+  width:100%;
+  max-width:460px;
   margin:0 auto;
-  max-width:100%;
 }
 
 /* Trust bullets under founder */
