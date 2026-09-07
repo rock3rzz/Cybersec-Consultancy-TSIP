@@ -61,21 +61,12 @@
           </p>
 
           <div class="fields">
-            <input type="text" name="MMERGE7" placeholder="Your name" autocomplete="name" />
-            <input type="email" name="EMAIL" placeholder="Your email" required autocomplete="email" />
-            <button type="submit" class="btn btn--cta">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M3 12l7 7 11-14" stroke="#0a0a0a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              <span>Send Me The Ebook</span>
-              <span class="shine" aria-hidden="true"></span>
-            </button>
+            <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="f5ad28ea-4f14-4163-bc15-9d5a9a073fd7"></script>
           </div>
 
           <small class="muted">
             We respect your inbox.
           </small>
-          <div id="mc-status" aria-live="polite" style="margin-top:10px"></div>
         </div>
       </form>
 
@@ -375,60 +366,6 @@
       });
     }, {threshold: 0.15});
     document.querySelectorAll('.reveal, .hero__title').forEach(el => io.observe(el));
-  </script>
-
-  <!-- Mailchimp JSONP submit -->
-  <script>
-    (function () {
-const MC_URL = 'https://app.us21.list-manage.com/subscribe/post-json';
-const MC_U   = 'e91085aeaa65622a0cb3b4e9e';  
-const MC_ID  = '2726077c0f';                
-
-      const form   = document.getElementById('mc-form');
-      const status = document.getElementById('mc-status');
-
-      function setStatus(msg, ok) {
-        status.textContent = msg;
-        status.style.padding = '10px 12px';
-        status.style.borderRadius = '10px';
-        status.style.display = 'inline-block';
-        status.style.background = ok ? 'rgba(149,205,105,0.12)' : 'rgba(255,102,102,0.12)';
-        status.style.color = ok ? '#95cd69' : '#ff6666';
-        status.style.boxShadow = ok
-          ? '0 6px 24px rgba(149,205,105,0.15)'
-          : '0 6px 24px rgba(255,102,102,0.15)';
-      }
-
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        const data = new FormData(form);
-        const email = (data.get('EMAIL') || '').trim();
-        if (!email) { setStatus('Please enter a valid email.', false); return; }
-        setStatus('Sending…', true);
-
-        const qs = new URLSearchParams();
-        qs.set('u', MC_U);
-        qs.set('id', MC_ID);
-        qs.set('c', 'mcCallback');
-        for (const [k, v] of data.entries()) qs.set(k, v);
-
-        window.mcCallback = function (resp) {
-          if (resp.result === 'success') {
-            setStatus('Done! Check your inbox, your first client starts here.', true);
-            form.reset();
-          } else {
-            const msg = (resp.msg || 'Something went wrong').replace(/<[^>]*>/g, '');
-            setStatus(msg, false);
-          }
-          if (jsonp && jsonp.parentNode) jsonp.parentNode.removeChild(jsonp);
-        };
-
-        const jsonp = document.createElement('script');
-        jsonp.src = MC_URL + '?' + qs.toString();
-        jsonp.onerror = function () { setStatus('Network error. Please try again.', false); };
-        document.body.appendChild(jsonp);
-      });
-    })();
   </script>
 
   <!-- Mobile menu -->
